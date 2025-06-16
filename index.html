@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Baltacı GSM Teknik Servis</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #f2f2f2;
+    color: #333;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #004080;
+    color: white;
+    flex-wrap: wrap;
+    min-height: 140px;
+  }
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    line-height: 1.2;
+  }
+  nav a:hover {
+    background: #003366;
+  }
+  header img {
+    max-height: 130px;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  main {
+    max-width: 800px;
+    margin: 30px auto 100px auto;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  .content {
+    display: none;
+  }
+  .content.active {
+    display: block;
+  }
+  h2 {
+    color: #0055a5;
+    margin-bottom: 15px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  ul li::before {
+    content: "🔧"; /* Default icon */
+    margin-right: 8px;
+  }
+  ul li.soket::before {
+    content: "⚙️";
+  }
+  ul li.batarya::before {
+    content: "🔋";
+  }
+  ul li.su::before {
+    content: "💧";
+  }
+  ul li.yazilim::before {
+    content: "💻";
+  }
+  ul li.aksesuar::before {
+    content: "📱";
+  }
+  footer {
+    background: #004080;
+    color: white;
+    text-align: left;
+    padding: 15px 30px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  a.mail-link {
+    color: #004080;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a.mail-link:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a id="link-hakkimizda">Hakkımızda</a>
+    <a id="link-hizmetler">Hizmetlerimiz</a>
+    <a id="link-iletisim">İletişim</a>
+  </nav>
+ <img src="tamir.jpg" alt="Süleyman BALTACI" />
+</header>
+
+<main>
+  <section id="hakkimizda" class="content">
+    <h2>Hakkımızda</h2>
+    <p>18 yıldır Baltacı GSM olarak cep telefonu tamiri ve aksesuar satışı alanında hizmet vermekteyiz. Müşteri memnuniyetini ön planda tutarak profesyonel servis hizmeti sunuyoruz.</p>
+  </section>
+
+  <section id="hizmetler" class="content">
+    <h2>Hizmetlerimiz</h2>
+    <ul>
+      <li>Cep Telefonu Ekran Değişimi</li>
+      <li class="batarya">Batarya Değişimi</li>
+      <li class="soket">Şarj Soketi Tamiri</li>
+      <li class="su">Su Hasarı Onarımı</li>
+      <li class="yazilim">Yazılım Güncelleme ve Sorun Giderme</li>
+      <li class="aksesuar">Aksesuar Satışı</li>
+    </ul>
+  </section>
+
+  <section id="iletisim" class="content">
+    <h2>İletişim</h2>
+    <p><strong>Adres:</strong> Nuri Paşa Mahallesi, 14. Sokak, No:19, Zeytinburnu, İstanbul</p>
+    <p><strong>Telefon:</strong> 535-705-6127</p>
+    <p><strong>E-posta:</strong> <a class="mail-link" href="mailto:suleymancomtr61@gmail.com">suleymancomtr61@gmail.com</a></p>
+    <p><strong>Çalışma Saatleri:</strong> 7 gün, 09:00 - 22:00</p>
+  </section>
+</main>
+
+<footer>
+  © 2025 Baltacı GSM Teknik Servis. Tüm hakları saklıdır.
+</footer>
+
+<script>
+  const linkHakkimizda = document.getElementById('link-hakkimizda');
+  const linkHizmetler = document.getElementById('link-hizmetler');
+  const linkIletisim = document.getElementById('link-iletisim');
+
+  const hakkimizda = document.getElementById('hakkimizda');
+  const hizmetler = document.getElementById('hizmetler');
+  const iletisim = document.getElementById('iletisim');
+
+  function hideAll() {
+    hakkimizda.classList.remove('active');
+    hizmetler.classList.remove('active');
+    iletisim.classList.remove('active');
+  }
+
+  linkHakkimizda.addEventListener('click', () => {
+    hideAll();
+    hakkimizda.classList.add('active');
+  });
+
+  linkHizmetler.addEventListener('click', () => {
+    hideAll();
+    hizmetler.classList.add('active');
+  });
+
+  linkIletisim.addEventListener('click', () => {
+    hideAll();
+    iletisim.classList.add('active');
+  });
+</script>
+
+</body>
+</html>
